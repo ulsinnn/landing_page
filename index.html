@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DB COFFEE ROASTERY</title>
+    <link rel="stylesheet" href="">   
+</head>
+<body>
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,800,900&display=swap');
+    *
+    {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    section
+    {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        padding: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #fff;
+    }
+    header
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    header .logo
+    {
+        margin-left: 50px;
+   
+    }
+    header ul
+    {
+        position: relative;
+        display: flex;
+    }
+    header ul li
+    {
+        list-style: none;
+    }
+    header ul li a
+    {
+        display: inline-block;
+        color: #333;
+        font-weight: 400;
+        margin-left: 40px;
+        text-decoration: none;
+        margin-top: -500px;
+    }
+    header ul li a:hover
+    {
+        color: #b06f2c;
+    }
+    .content
+    {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .content .textbox h2 
+    {
+        font-size: 4em;
+        color: #333;
+        line-height: 1.4em;
+        font-weight: 500;
+        margin-left: 50px;
+    }
+    .content .textbox h2 span
+    {
+        color: #b06f2c;
+        font-size: 1.2em;
+        font-weight: 1000;
+    }
+    .content .textbox p
+    {
+        color: #333;
+        margin-left: 50px;
+        font-size: 25px;
+    }
+    .content .textbox a
+    {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 8px 20px;
+        background: #b06f2c;
+        color: #fff;
+        border-radius: 40px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-decoration: none;
+        margin-left: 50px;
+    }
+    .content .textbox a:hover
+    {
+        background-color: white;
+        color: black;
+    }
+    .content .imgbx
+    {
+        width: 600px; 
+        display: flex; 
+        justify-content: flex-end;
+        padding-right: 50px;
+        margin-top: 50px;   
+    }
+    .content .imgbx img
+    {
+        width: 550px;
+        height: 650px;
+        margin-right: 50px;
+    }
+    .thumb
+    {
+        position: absolute;
+        left: 50%;
+        bottom: 20px;
+        transform: translateX(-50%);
+        display: flex;
+    }
+    .thumb li
+    {
+        list-style: none;
+        display: inline-block;
+        margin: 0 20px;
+        cursor: pointer;
+    }
+    .thumb li img
+    {
+        max-width: 70px;
+    }
+    .thumb li:hover
+    {
+        transform: translateY(-15px);
+    }
+    .soc
+    {
+
+        position: absolute;
+        top: 50%;
+        right: 30px;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+
+    }
+    .soc li
+    {
+        list-style: none;
+
+    }
+    .soc li a
+    {
+        display: inline-block;
+        margin: 5px 0;
+        transform: scale(0.6);
+        filter: invert(1);
+    }
+    .circ
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #b06f2c;
+        clip-path: circle(600px at right 750px);
+    }
+    </style>
+    <section>
+        <div class="circ"></div>
+        <header>
+            <a href="#" class="logo"><img src="logo_brand.png" height="150" alt="DB Coffee Roastery Logo"></a>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">What's New</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textbox">
+                <h2>Don't mind me, <br>just <span>procaffeinating</span></h2>
+                <p>We are a micro-coffee roastery based in Lucena City.<br>Coffee supply for home or for business</p>
+                <a href="#">Follow for Updates!</a>
+            </div>
+            <div class="imgbx">
+                <img src="Es Yenn.png" alt="Es Yenn Ice coffee" class="DB">
+            </div>
+        </div>
+        <ul class="thumb">
+            <li><img src="Dir.jpg" onclick="imgSlider('Dirty.png');changeCircColor('#b06f2c')"></li>
+            <li><img src="EY.jpg" onclick="imgSlider('Es Yenn.png');changeCircColor('#eab676')"></li>
+            <li><img src="match.jpg" onclick="imgSlider('matcha.png');changeCircColor('#81871a')"></li>
+        </ul>
+        <ul class="soc">
+            <li><a href="https://www.instagram.com/dbroasters"><img src="IG.png"></a></li>
+            <li><a href="https://www.facebook.com/dbroasters"><img src="fb.png"></a></li>
+            <li><a href="https://shopdbcafe.com/"><img src="cart.png"></a></li>
+        </ul>
+    </section>
+    <script type="text/javascript">
+        function imgSlider(anything){
+            document.querySelector('.DB').src = anything;
+        }
+
+        function changeCircColor(color){
+            const circ = document.querySelector('.circ');
+            circ.style.background = color;
+        }
+    </script>
+</body>
+</html>
